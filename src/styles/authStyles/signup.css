@@ -1,0 +1,125 @@
+.signup{
+    width: 100%;
+    height: 87vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.card{
+    width: 60%;
+    height: 85vh;
+    background-color: #efefef;
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before{
+    width: 120%;
+    height: 20rem;
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    background-color: rgb(59, 59, 216);
+    border-radius: 50%;
+    box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+.napis{
+    width: 100%;
+    height: 10%;
+    font-size: 4rem;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    color: #efefef;
+}
+
+.inputsForm{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+.labs{
+    width: 100%;
+    height: 5%;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+
+
+.inputs{
+    width: 100%;
+    height: 15%;
+    border-radius:1rem ;
+    padding-left: 1rem;
+}
+
+.inputs::placeholder, .inputsL::placeholder{
+    font-size: 2rem;
+}
+
+.buttons{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.google{
+    width: 60%;
+    min-width: 25rem;
+    max-width: 35rem;
+    height: 33%;
+    font-size: 2.2rem;
+    background-color: rgb(56, 116, 255);
+    color: #efefef;
+    border-radius: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.confirm{
+    width: 40%;
+    height: 33%;
+    background-color: #dbdbdb;
+    border-radius: 1rem;
+    font-size: 2rem;
+    min-width: 20rem;
+    cursor: pointer;
+}
+
+.kkkL{
+    color: rgb(56, 116, 255);
+    cursor: pointer;
+}
+
+
+.gIcon{
+    width: 15%;
+    height: 60%;
+    background-color: #efefef;
+    color: rgb(56, 116, 255);
+    border-radius: 1rem;
+
+}
