@@ -13,12 +13,11 @@ function App() {
   const [IsAuth, SetIsAuth] = useState<boolean>(false);
   const [Color, SetColor] = useState<string>("");
 
-
   return (
     <Router>
       <div className="App">
 
-        <Header color={Color} setColor={SetColor}/>
+        <Header color={Color} setColor={SetColor} isAuth={IsAuth} setIsAuth={SetIsAuth}/>
         <Routes>
           <Route path='/SignUp' element={<SignUp 
           isAuth={IsAuth} setIsAuth={SetIsAuth} color={Color} setColor={SetColor}/>} />

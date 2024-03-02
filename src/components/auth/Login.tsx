@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
-import { signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
+import { signInWithEmailAndPassword, signInWithPopup, updateProfile,  } from "firebase/auth";
 import {auth, googleProvider} from "../../config/firebase";
 type Props = {
     isAuth:boolean;
@@ -36,24 +36,19 @@ const Login = (props:Props) => {
 
     const handleGoogleLogin = async () => {
         try {
-            const userCredentials = await signInWithPopup(auth, googleProvider);
-            const user = userCredentials.user;
-    
-           
-              
-                const name = user.displayName;
-    
-               
-                await updateProfile(user, {
-                    displayName: name
-                });
-    
-            props.setIsAuth(true);
-            navigate("/");
+          const userCredentials = await signInWithPopup(auth, googleProvider);
+
+          await updateProfile(userCredentials.user, {
+              displayName:userCredentials.user.displayName,
+          }).then(()=>{
+              props.setIsAuth(true);
+              navigate("/");
+
+          })
         } catch (err) {
-            console.log(err);
+          console.log("wrong password");
         }
-    }
+      };
     
 
     

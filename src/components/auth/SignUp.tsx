@@ -1,8 +1,8 @@
 import "../../styles/authStyles/signup.css";
 import { useEffect, useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
-import { auth } from "../../config/firebase";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth, googleProvider } from "../../config/firebase";
+import { createUserWithEmailAndPassword, updateProfile, signInWithPopup } from "firebase/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 
@@ -37,6 +37,23 @@ const SignUp = (props:Props) => {
     }
 
 
+    const handleGoogleLogin = async () => {
+        try {
+          const userCredentials = await signInWithPopup(auth, googleProvider);
+
+          await updateProfile(userCredentials.user, {
+              displayName:userCredentials.user.displayName,
+          }).then(()=>{
+              props.setIsAuth(true);
+              navigate("/");
+
+          })
+        } catch (err) {
+          console.log("wrong password");
+        }
+      };
+    
+
     return ( 
         <div className="signup">
             <div className="card">
@@ -51,7 +68,7 @@ const SignUp = (props:Props) => {
                     <h1>{`Arleady have an account? `}<NavLink to="/Login" className="kkkL">Login</NavLink></h1>
                 </div>
                 <div className="buttons">
-                    <button className="google"><FontAwesomeIcon icon={faGoogle} className="gIcon"/> Sign Up With Google</button>
+                    <button className="google"><FontAwesomeIcon icon={faGoogle} className="gIcon" onClick={handleGoogleLogin}/> Sign Up With Google</button>
                     <button className="confirm" onClick={handleSubmit}>SignUp</button>
                 </div>
             </div>
