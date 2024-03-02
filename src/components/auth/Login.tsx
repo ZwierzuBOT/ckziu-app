@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import {auth} from "../../config/firebase";
+import { signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
+import {auth, googleProvider} from "../../config/firebase";
 type Props = {
     isAuth:boolean;
     setIsAuth:React.Dispatch<React.SetStateAction<boolean>>;
@@ -32,6 +32,31 @@ const Login = (props:Props) => {
         
 
     }
+
+
+    const handleGoogleLogin = async () => {
+        try {
+            const userCredentials = await signInWithPopup(auth, googleProvider);
+            const user = userCredentials.user;
+    
+           
+              
+                const name = user.displayName;
+    
+               
+                await updateProfile(user, {
+                    displayName: name
+                });
+    
+            props.setIsAuth(true);
+            navigate("/");
+        } catch (err) {
+            console.log(err);
+        }
+    }
+    
+
+    
     return ( 
         <div className="signup">
             <div className="cardL">
@@ -44,7 +69,7 @@ const Login = (props:Props) => {
                     <h1>{`Don't have and account? `}<NavLink to="/SignUp" className="kkk">Sign Up</NavLink></h1>
                 </div>
                 <div className="buttons">
-                <button className="googleL"><FontAwesomeIcon icon={faGoogle} className="gIconL"/> Continue With Google</button>
+                <button className="googleL" onClick={handleGoogleLogin}><FontAwesomeIcon icon={faGoogle} className="gIconL"/> Continue With Google</button>
                     <button className="confirm" onClick={handleSubmit}>Login</button>
                 </div>
             </div>

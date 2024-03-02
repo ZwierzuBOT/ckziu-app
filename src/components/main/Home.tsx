@@ -15,7 +15,9 @@ const Home = (props: Props) => {
         }
     }, [props.isAuth, navigate]);
 
-    return <div className="home"></div>;
+    return <div className="home">
+        {}
+    </div>;
 };
 
 export default Home;
