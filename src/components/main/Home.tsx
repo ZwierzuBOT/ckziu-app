@@ -1,6 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {auth} from "../../config/firebase";
+import SideBar from "../sideHome/SideBar";
+
+import Tasks from "../items/Tasks";
 type Props = {
     isAuth: boolean;
     setIsAuth: React.Dispatch<React.SetStateAction<boolean>>;
@@ -8,6 +11,7 @@ type Props = {
 
 const Home = (props: Props) => {
     const navigate = useNavigate();
+    const [toDisplay, setToDisplay] = useState<string>("tasks");
 
     useEffect(() => {
         if (!props.isAuth) {
@@ -16,7 +20,8 @@ const Home = (props: Props) => {
     }, [props.isAuth, navigate]);
 
     return <div className="home">
-        {auth.currentUser?.displayName}
+        <SideBar/>
+        <Tasks/>
     </div>;
 };
 

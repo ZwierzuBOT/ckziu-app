@@ -10,6 +10,7 @@
 
 .card{
     width: 60%;
+    max-width: 55rem;
     height: 85vh;
     background-color: #efefef;
     border-radius: 1rem;
@@ -20,6 +21,7 @@
     justify-content: space-between;
     position: relative;
     overflow: hidden;
+    min-width: 25rem;
 }
 
 .card::before{

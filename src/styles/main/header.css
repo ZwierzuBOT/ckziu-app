@@ -4,11 +4,12 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-start ;
-    padding: 1rem;
+    padding-left:1rem ;
+    padding-right:1rem ;
 }
 
 .links{
-    width: 60%;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -32,7 +33,7 @@
 
 .linkH{
     width: 33.33333333%;
-    height: 60%;
+    height: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,11 +42,9 @@
     color: black;
     font-size: 2rem;
     transition: all 0.3s ease;
-    padding: 1rem;
     position: relative;
     background-color: transparent;
 }
-
 
 .linkH:hover::before{
     content: '';
@@ -53,19 +52,23 @@
     height: 100%;
     position: absolute;
     top: 0;
-    left: 0;
+    left: auto;
+    right: auto;
     z-index: -3;
 }
+
 
 .linkH::before{
     content: '';
     width: 0%;
-    height: 100%;
+    height: 0%;
     position: absolute;
-    top: 0;
-    right: 0;
+    bottom: 0;
+    right: auto;
+    left: auto;
     z-index: -3;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+    border-radius: 1rem;
 }
 
 .blue::before{
