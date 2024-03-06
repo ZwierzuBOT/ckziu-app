@@ -3,6 +3,9 @@ import { NavLink } from "react-router-dom";
 import "../../styles/main/header.css";
 import { signOut } from "firebase/auth";
 import {auth} from "../../config/firebase";
+
+import ckziuImg from "../../assets/ckziuImg.png";
+
 type Props = {
     color:string;
     setColor:React.Dispatch<React.SetStateAction<string>>;
@@ -19,6 +22,7 @@ const Header = (props:Props) => {
     return ( 
         <div className="header">
             <div className="links">
+            <img src={ckziuImg} alt="Ckziu Image" className="imgCkziu"/>
             <NavLink className={`linkH ${props.color}`}  to="/" id="first">Home</NavLink>
             <NavLink className={`linkH ${props.color}`} to="about">About Us</NavLink>
             <NavLink className={`linkH ${props.color}`} to="contact">Contact</NavLink>

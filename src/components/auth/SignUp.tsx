@@ -23,6 +23,9 @@ const SignUp = (props:Props) => {
     const [password, setPassword] = useState("");
 
     const navigate = useNavigate();
+
+
+
     const handleSubmit = async () => {
         try{
             const userCredentils = await createUserWithEmailAndPassword(auth, email, password)
@@ -37,7 +40,7 @@ const SignUp = (props:Props) => {
     }
 
 
-    const handleGoogleLogin = async () => {
+    const handleGoogleSignIn = async () => {
         try {
           const userCredentials = await signInWithPopup(auth, googleProvider);
 
@@ -69,7 +72,7 @@ const SignUp = (props:Props) => {
                     <h1>{`Arleady have an account? `}<NavLink to="/Login" className="kkkL">Login</NavLink></h1>
                 </div>
                 <div className="buttons">
-                    <button className="google"><FontAwesomeIcon icon={faGoogle} className="gIcon" onClick={handleGoogleLogin}/> Sign Up With Google</button>
+                    <button className="google" onClick={handleGoogleSignIn}><FontAwesomeIcon icon={faGoogle} className="gIcon" /> Sign Up With Google</button>
                     <button className="confirm" onClick={handleSubmit}>SignUp</button>
                 </div>
             </div>

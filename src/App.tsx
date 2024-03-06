@@ -6,6 +6,7 @@ import SignUp from "./components/auth/SignUp";
 import Login from './components/auth/Login';
 import Header from './components/main/Header';
 import Home from "./components/main/Home";
+import Tasks from "./components/items/Tasks";
 import { useState } from 'react';
 
 function App() {
@@ -28,6 +29,9 @@ function App() {
           <Route path='/' element={<Home 
           isAuth={IsAuth} setIsAuth={SetIsAuth}
           />}/>
+
+          <Route path="/Tasks" element={<Tasks/>}
+          />
         </Routes>
       </div>
     </Router>

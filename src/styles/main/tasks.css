@@ -1,0 +1,32 @@
+.tasks {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+    padding-bottom: 15rem; /* You may adjust the padding-bottom as needed */
+}
+
+.task {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: black .3rem solid;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.task h1 {
+    width: 100%;
+    font-size: 2.3rem;
+}
+
+.task p {
+    width: 100%;
+    font-size: 1.4rem;
+}

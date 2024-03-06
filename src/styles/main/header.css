@@ -1,11 +1,13 @@
 .header{
     width: 100%;
+    min-height: 15vh;
     height: 15vh;
     display: flex;
     justify-content: flex-end;
     align-items: flex-start ;
     padding-left:1rem ;
     padding-right:1rem ;
+    background-color: #e0e0e0;
 }
 
 .links{
@@ -82,6 +84,11 @@ background-color: rgb(63, 0, 139);
     color: white;
 }
     
+.imgCkziu{
+    width: 20%;
+    max-width: 12rem;
+    height: 100%;
+}
 
 
 
