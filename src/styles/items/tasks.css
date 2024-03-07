@@ -7,7 +7,7 @@
     flex-direction: column;
     gap: 3rem;
     align-items: center;
-    padding-bottom: 15rem; /* You may adjust the padding-bottom as needed */
+    padding-bottom: 15rem;
 }
 
 .task {

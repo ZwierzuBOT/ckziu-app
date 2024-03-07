@@ -3,7 +3,7 @@
     height: 87vh;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     overflow: hidden;
     z-index: 5;
 }
@@ -11,7 +11,7 @@
 .card{
     width: 60%;
     max-width: 55rem;
-    height: 85vh;
+    height: 80vh;
     background-color: #efefef;
     border-radius: 1rem;
     padding: 1rem;

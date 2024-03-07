@@ -1,7 +1,19 @@
-import "../../styles/main/tasks.css";
+import "../../styles/items/tasks.css";
 import SideBar from "../sideHome/SideBar";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+type Props = {
+    isAuth: boolean;
+    setIsAuth: React.Dispatch<React.SetStateAction<boolean>>;
+};
+const Tasks = (props:Props) => {
+    const navigate = useNavigate();
 
-const Tasks = () => {
+    useEffect(() => {
+        if (!props.isAuth) {
+            navigate("/Login");
+        }
+    }, [props.isAuth, navigate]);
     return (
         <div className="home">
             <SideBar/>

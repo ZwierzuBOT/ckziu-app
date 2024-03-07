@@ -48,8 +48,8 @@ const SignUp = (props:Props) => {
               displayName:userCredentials.user.displayName,
           }).then(()=>{
               props.setIsAuth(true);
-              props.setColor("purple");
-              navigate("/");
+              props.setColor("gray");
+              navigate("/Tasks");
 
           })
         } catch (err) {

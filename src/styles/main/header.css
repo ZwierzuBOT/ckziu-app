@@ -5,8 +5,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-start ;
-    padding-left:1rem ;
-    padding-right:1rem ;
+    padding-right: .2rem;
     background-color: #e0e0e0;
 }
 
@@ -14,8 +13,8 @@
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-evenly;
     z-index: 2;
     position: relative;
 }
@@ -34,7 +33,7 @@
 
 
 .linkH{
-    width: 33.33333333%;
+    width: 20%;
     height: 80%;
     display: flex;
     justify-content: center;
@@ -42,7 +41,7 @@
     cursor: pointer;
     text-decoration: none;
     color: black;
-    font-size: 2rem;
+    font-size: 2.75rem;
     transition: all 0.3s ease;
     position: relative;
     background-color: transparent;
@@ -74,18 +73,20 @@
 }
 
 .blue::before{
-background-color: rgb(59, 59, 216);
+    background-color: rgb(59, 59, 216);
 }
 .purple::before{
-background-color: rgb(63, 0, 139);
+    background-color: rgb(63, 0, 139);
 }
-
+.gray::before{
+    background-color: #969696;
+}
 .linkH:hover{
     color: white;
 }
     
 .imgCkziu{
-    width: 20%;
+    width: 100%;
     max-width: 12rem;
     height: 100%;
 }

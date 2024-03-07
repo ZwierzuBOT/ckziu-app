@@ -33,7 +33,7 @@
     right: auto;
     width: 0%;
     height: 10%;
-    background-color: rgb(63, 0, 139);
+    background-color: #696969;
     border-radius: 1rem;
     transition: width 0.3s ease-in-out;
 }

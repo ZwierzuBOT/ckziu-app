@@ -2,11 +2,18 @@
 import './App.css';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+
 import SignUp from "./components/auth/SignUp";
 import Login from './components/auth/Login';
+
 import Header from './components/main/Header';
 import Home from "./components/main/Home";
+
+
 import Tasks from "./components/items/Tasks";
+import Schedule from "./components/items/Schedule";
+
 import { useState } from 'react';
 
 function App() {
@@ -30,8 +37,12 @@ function App() {
           isAuth={IsAuth} setIsAuth={SetIsAuth}
           />}/>
 
-          <Route path="/Tasks" element={<Tasks/>}
+          <Route path="/Tasks" element={<Tasks
+          isAuth={IsAuth} setIsAuth={SetIsAuth}/>}
           />
+
+          <Route path="/Schedule" element={<Schedule
+          isAuth={IsAuth} setIsAuth={SetIsAuth}/>}/>
         </Routes>
       </div>
     </Router>

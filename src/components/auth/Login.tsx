@@ -24,7 +24,8 @@ const Login = (props:Props) => {
         try{
             await signInWithEmailAndPassword(auth, email, password).then(()=>{
                 props.setIsAuth(true);
-                navigate("/");
+                props.setColor("gray");
+                navigate("/Tasks");
             })
         }catch(err){
             console.log(err)
@@ -42,7 +43,8 @@ const Login = (props:Props) => {
               displayName:userCredentials.user.displayName,
           }).then(()=>{
               props.setIsAuth(true);
-              navigate("/");
+              props.setColor("gray");
+              navigate("/Tasks");
 
           })
         } catch (err) {
