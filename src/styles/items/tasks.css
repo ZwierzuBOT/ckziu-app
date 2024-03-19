@@ -7,11 +7,12 @@
     flex-direction: column;
     gap: 3rem;
     align-items: center;
-    padding-bottom: 15rem;
+    padding-bottom: 30%;
 }
 
 .task {
     width: 80%;
+    max-width: 65rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
