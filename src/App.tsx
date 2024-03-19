@@ -21,6 +21,7 @@ function App() {
   const [IsAuth, SetIsAuth] = useState<boolean>(false);
   const [Color, SetColor] = useState<string>("");
 
+
   return (
     <Router>
       <div className="App">
