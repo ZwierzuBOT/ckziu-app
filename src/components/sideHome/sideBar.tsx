@@ -1,7 +1,7 @@
 
 import { NavLink } from "react-router-dom";
 import "../../styles/sidebar/sideHome.css";
-const sideBar = () => {
+const SideBar = () => {
     return ( 
         <div className="sidebar">
             <NavLink className="sideItem" to="/tasks">Tasks</NavLink>
@@ -15,4 +15,4 @@ const sideBar = () => {
      );
 }
  
-export default sideBar;
+export default SideBar;
