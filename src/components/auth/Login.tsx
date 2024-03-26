@@ -63,7 +63,7 @@ const Login = (props:Props) => {
                     <input type="email" id="email" className="inputsL" placeholder="..." onChange={(e)=>setEmail(e.target.value)}/>
                     <label htmlFor="password" className="labsL">Password:</label>
                     <input type="password" id="password" className="inputsL" placeholder="..." onChange={(e)=>setPassword(e.target.value)}/>
-                    <h1>{`Don't have and account? `}<NavLink to="/SignUp" className="kkk">Sign Up</NavLink></h1>
+                    <h1>{`Don't have an account? `}<NavLink to="/SignUp" className="kkk">Sign Up</NavLink></h1>
                 </div>
                 <div className="buttons">
                 <button className="googleL" onClick={handleGoogleLogin}><FontAwesomeIcon icon={faGoogle} className="gIconL"/> Continue With Google</button>

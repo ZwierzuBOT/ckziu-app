@@ -94,3 +94,8 @@
 
 
 
+@media screen and (max-width:1024px) {
+    .linkH{
+        font-size: 2rem;
+    }
+}
